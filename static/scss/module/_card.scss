@@ -1,0 +1,35 @@
+// card
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.card {
+    position: relative;
+    padding: .5rem;
+    border: solid 1px $border-color;
+    margin-bottom: $generic-margin-bottom;
+    img {
+        @extend .img-fluid;
+        @extend .full-width;
+        display: block;
+    }
+    .description {
+        @extend .small;
+        font-weight: 600;
+        display: block;
+        text-align: center;
+        margin-bottom: .5rem;
+    }
+    .title {
+        @extend .small;
+        font-weight: 600;
+        display: block;
+        text-align: center;
+        padding: .5rem 1rem;
+        text-transform: uppercase;
+    }
+    a {
+        @include abs-position(0,0,0,0);
+    }
+    &:hover {
+        border-color: darken($border-color, $darken-hover-percent);
+    }
+}

@@ -1,0 +1,23 @@
+// typography
+//-----------------------
+
+// The font sizes for h1-h6.
+.heading1 { font-size: $h1-font-size; }
+.heading2 { font-size: $h2-font-size; }
+.heading3 { font-size: $h3-font-size; }
+.heading4 { font-size: $h4-font-size; }
+.heading5 { font-size: $h5-font-size; }
+.heading6 { font-size: $h6-font-size; }
+
+.heading1, 
+.heading2, 
+.heading3, 
+.heading4, 
+.heading5, 
+.heading6 { font-weight: $heading-font-weight; }
+
+.jumbo {
+    font-size: 12rem;
+    font-weight: 600;
+    line-height: 9rem;
+}

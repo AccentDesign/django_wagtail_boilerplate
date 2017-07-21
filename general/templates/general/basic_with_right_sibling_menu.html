@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load general_tags menu_tags static %}
+
+{% block page_title %}{% firstof page.seo_title page.title %}{% endblock %}
+
+{% block inner_content %}
+
+    <div class="container">
+		<div class="row">
+			<div class="col-12">
+				{% breadcrumb %}
+			</div>
+		</div>
+	</div>
+
+    {% include 'general/partials/carousel.html' with carousel_items=page.carousel_items.all only %}
+
+	<div class="container my-5">
+        <div class="row">
+            <div class="col-md-2 order-md-2">
+                {% children_menu parent_page=page.get_parent apply_active_classes=True template='general/menus/aside_menu.html' %}
+            </div>
+
+            <div class="col-md-10 order-md-1">
+                {% include 'general/partials/basic_body.html' %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block extra_js %}{% endblock %}

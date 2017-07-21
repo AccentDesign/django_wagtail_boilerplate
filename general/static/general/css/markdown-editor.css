@@ -1,0 +1,7 @@
+.markdown textarea {
+    font-family: monospace, monospace;
+    font-size: 100%;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+}

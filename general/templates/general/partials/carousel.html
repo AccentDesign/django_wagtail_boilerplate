@@ -1,0 +1,21 @@
+{% load wagtailcore_tags wagtailembeds_tags wagtailimages_tags %}
+{% if carousel_items %}
+<div class="owl-carousel owl-theme mb-1h">
+    {% for carousel_item in carousel_items %}
+    <div class="item">
+        {% image carousel_item.image original as image_data %}
+        <img src="{{ image_data.url }}" alt="{{ image_data.alt }}" />
+        {% if carousel_item.caption or carousel_item.link %}
+            <div class="container">
+                <div class="carousel-caption">
+                    <h3>{{ carousel_item.caption }}</h3>
+                    {% if carousel_item.link %}
+                        <a href="{{ carousel_item.link }}" class="button button-primary">Open</a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}

@@ -1,0 +1,64 @@
+.sequence-type-cards {
+    width: 100% !important;
+}
+
+.sequence-type-cards .sequence-container-inner .sequence {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -20px 0 20px -20px;
+}
+
+.sequence-type-cards .sequence-member {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 0 20px;
+}
+
+@media (max-width: 767px) {
+    .sequence-type-cards .sequence-member {
+        width: calc(100% - 20px);
+    }
+}
+
+@media (min-width: 768px) {
+    .sequence-type-cards .sequence-member {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (min-width: 1199px) {
+    .sequence-type-cards .sequence-member {
+        width: calc(33% - 20px);
+    }
+}
+
+.sequence-type-cards .sequence-member .sequence-controls {
+    top: 1px;
+    right: 1px;
+}
+
+.sequence-type-cards .sequence-member .sequence-member-inner {
+    flex: 1;
+    border: 1px solid #43b1b0;
+    border-radius: 4px;
+    padding: 20px !important;
+}
+
+.sequence-type-cards .sequence-member .sequence-member-inner label {
+    display: block;
+    width: 100%;
+}
+
+.sequence-type-cards .sequence-member .sequence-member-inner .field-content {
+    width: 100%;
+}
+
+.sequence-type-cards .sequence-member .struct-block .object-help {
+    padding-left: 2.5em;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.sequence-type-cards .sequence-member .struct-block .fields {
+    width: 100%;
+}

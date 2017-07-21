@@ -1,0 +1,19 @@
+// Breadcrumb
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.breadcrumb {
+    @include clearfix;
+    list-style: none;
+    font-size: 100%;
+    margin: .5rem 0;
+}
+
+.breadcrumb li {
+    float: left;
+}
+
+.breadcrumb li + li::before {
+    @include pseudo(inline-block, inherit, '/');
+    padding: 0 .5rem;
+}
+

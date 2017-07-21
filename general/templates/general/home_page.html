@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load general_tags menu_tags static %}
+
+{% block page_title %}{% firstof page.seo_title page.title %}{% endblock %}
+
+{% block inner_content %}
+
+<div class="container my-5">
+    {% lorem 2 p %}
+    <p>Now: {% now "jS F Y H:i" %}</p>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}{% endblock %}

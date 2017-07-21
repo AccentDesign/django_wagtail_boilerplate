@@ -1,0 +1,11 @@
+boto3
+django
+django-storages
+markdown
+pygments
+wagtail
+wagtailmenus
+
+# postgres & mysql client
+psycopg2
+mysqlclient

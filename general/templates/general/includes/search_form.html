@@ -1,0 +1,4 @@
+<form method="get" action="{% url 'search' %}" class="mb-0">
+    <input type="text" class="mb-0" name="query" placeholder="Search" value="{{ search_query|default_if_none:'' }}">
+    <button type="submit" class="hidden">Search</button>
+</form>

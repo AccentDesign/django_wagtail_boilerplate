@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% load general_tags wagtailcore_tags %}
+
+{% block page_title %}Search Results{% endblock %}
+
+{% block inner_content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-8">
+
+            <ul class="list-style-none">
+                {% if search_promotions %}
+                    {% for result in search_promotions %}
+                        <li class="mb-3">
+                            <h3 class="mb-0"><a href="{% pageurl result.page %}">{{ result.page.title }}</a></h3>
+                            <div class="small muted">{% breadcrumb result.page False %}</div>
+                            <p class="mt-1">{{ result.description|safe }}</p>
+                        </li>
+                    {% endfor %}
+                {% endif %}
+                {% if search_results %}
+                    {% for result in search_results %}
+                        <li class="mb-3">
+                            <h3 class="mb-0"><a href="{% pageurl result.specific %}">{{ result.specific }}</a></h3>
+                            <div class="small muted">{% breadcrumb result.specific False %}</div>
+                            <p class="mt-1">
+                                {% if result.specific.search_description %}
+                                    {{ result.specific.search_description|safe }}
+                                {% else %}
+                                    No description available
+                                {% endif %}
+                            </p>
+                        </li>
+                    {% endfor %}
+                {% elif search_promotions %}
+                    {# search promotions are being displayed so no need to show message #}
+                {% elif search_query %}
+                    <li>No results found</li>
+                {% else %}
+                    <li>You didn’t search anything!</li>
+                {% endif %}
+            </ul>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

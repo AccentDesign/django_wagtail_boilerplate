@@ -1,0 +1,28 @@
+// Rich Text
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+/**
+ * If an image is floated at the end of the rich text then this stops this clears
+ * it for the content underneath
+ */
+.rich-text {
+    @include clearfix;
+}
+
+/**
+ * The options for images selected in a rich text streamfield
+ * the .full-width class is already a karma helper so need to duplicate here
+ */
+.richtext-image {
+    @extend .img-fluid;
+}
+
+.richtext-image.left {
+    float: left;
+    margin: 0 2rem 1.5rem 0;
+}
+
+.richtext-image.right {
+    float: right;
+    margin: 0 0 1.5rem 2rem;
+}

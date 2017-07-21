@@ -1,0 +1,9 @@
+{% load general_tags wagtailcore_tags %}
+
+{% for block in blocks %}
+    {% if block.block_type == 'custom_content' %}
+        {% include 'general/partials/stream_field.html' with blocks=block.value.body %}
+    {% else %}
+        {% include_block block %}
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,17 @@
+{% load menu_tags %}
+{% if menu_items %}
+	<nav class="nav-main">
+        <ul class="list-style-none">
+            {% if parent_page.specific.is_placeholder %}
+                <li><strong>{{ parent_page }}</strong></li>
+            {% else %}
+                <li><a href="{{ parent_page.url }}"><strong>{{ parent_page }}</strong></a></li>
+            {% endif %}
+            {% for item in menu_items %}
+            <li class="{{ item.active_class }}">
+                <a class="doc-a" href="{{ item.href }}">{{ item.text }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+{% endif %}

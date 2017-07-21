@@ -1,0 +1,18 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+<div class="card">
+    {% if value.image %}
+        {% image value.image fill-498x276 as img %}
+        <img src="{{ img.url }}" alt="{{ img.alt }}">
+    {% elif value.page.specific.feed_image %}
+        {% image value.page.specific.feed_image fill-498x276 as img %}
+        <img src="{{ img.url }}" alt="{{ img.alt }}">
+    {% else %}
+        <img src="http://via.placeholder.com/498x276?text=no+image" alt="no image">
+    {% endif %}
+    <span class="title">{% firstof value.page.seo_title value.page.title %}</span>
+    {% if value.show_description %}
+        <p class="description">{{ value.page.search_description }}</p>
+    {% endif %}
+    <a href="{% pageurl value.page %}"></a>
+</div>

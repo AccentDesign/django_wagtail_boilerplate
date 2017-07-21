@@ -1,0 +1,16 @@
+machine:
+  pre:
+    - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
+    - pip install docker-compose==1.8.0
+  services:
+    - docker
+
+test:
+  pre:
+    - docker-compose pull
+    - docker-compose up -d
+  override:
+    - docker-compose run app make test
+  post:
+    - docker-compose run -e COVERALLS_REPO_TOKEN app coveralls
+    - cp -r htmlcov $CIRCLE_ARTIFACTS
