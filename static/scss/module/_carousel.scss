@@ -1,0 +1,27 @@
+// Carousel
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.swiper-slide {
+
+    img {
+        min-height: 1px;
+        max-width: 100%;
+        width: 100%;
+        display: block;
+        height: auto;
+    }
+
+    .swiper-caption {
+        @include centerer(false, true);
+
+        .title {
+            margin-bottom: 3rem;
+            color: color("white");
+        }
+
+        .button {
+            // url if set
+        }
+    }
+
+}

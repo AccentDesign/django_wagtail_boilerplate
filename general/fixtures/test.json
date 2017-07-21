@@ -1,0 +1,146 @@
+[
+  {
+    "model": "wagtailcore.site",
+    "pk": 1,
+    "fields": {
+      "hostname": "127.0.0.1",
+      "port": 8000,
+      "site_name": null,
+      "root_page": 2,
+      "is_default_site": true
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 1,
+    "fields": {
+      "title": "Root",
+      "path": "0001",
+      "depth": 1,
+      "numchild": 1,
+      "slug": "root",
+      "content_type": [
+        "wagtailcore",
+        "page"
+      ],
+      "live": true,
+      "url_path": "/",
+      "show_in_menus": false,
+      "owner": null
+    }
+  },
+  {
+    "model": "general.basicpage",
+    "pk": 2,
+    "fields": {
+      "template_string": "general/basic.html"
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 2,
+    "fields": {
+      "title": "Home",
+      "path": "00010001",
+      "depth": 2,
+      "numchild": 3,
+      "slug": "home",
+      "content_type": [
+        "general",
+        "basicpage"
+      ],
+      "live": true,
+      "url_path": "/home/",
+      "show_in_menus": false,
+      "owner": null
+    }
+  },
+  {
+    "model": "general.pageredirection",
+    "pk": 3,
+    "fields": {
+      "redirect_to_page": 2
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 3,
+    "fields": {
+      "title": "Home Alias",
+      "path": "000100010001",
+      "depth": 3,
+      "numchild": 0,
+      "slug": "home-alias",
+      "content_type": [
+        "general",
+        "pageredirection"
+      ],
+      "live": true,
+      "url_path": "/home/home-alias/",
+      "show_in_menus": true,
+      "owner": null
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 4,
+    "fields": {
+      "title": "Sub 1",
+      "path": "000100010002",
+      "depth": 3,
+      "numchild": 0,
+      "slug": "sub-1",
+      "content_type": [
+        "wagtailcore",
+        "page"
+      ],
+      "live": true,
+      "url_path": "/home/sub-1/",
+      "show_in_menus": false,
+      "owner": null
+    }
+  },
+  {
+    "model": "general.pageplaceholder",
+    "pk": 5,
+    "fields": {
+      "disclaimer": true
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 5,
+    "fields": {
+      "title": "Page Placeholder",
+      "path": "000100010003",
+      "depth": 3,
+      "numchild": 0,
+      "slug": "page-placeholder",
+      "content_type": [
+        "general",
+        "pageplaceholder"
+      ],
+      "live": true,
+      "url_path": "/home/page-placeholder/",
+      "show_in_menus": true,
+      "owner": null
+    }
+  },
+  {
+    "model": "wagtailsearch.query",
+    "pk": 1,
+    "fields": {
+      "query_string": "homepick"
+    }
+  },
+  {
+    "model": "wagtailsearchpromotions.searchpromotion",
+    "pk": 1,
+    "fields": {
+      "sort_order": 1,
+      "description": "description",
+      "page": 2,
+      "query": 1
+    }
+  }
+]

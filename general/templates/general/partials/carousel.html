@@ -1,0 +1,26 @@
+{% load wagtailcore_tags wagtailembeds_tags wagtailimages_tags %}
+{% if carousel_items %}
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        {% for carousel_item in carousel_items %}
+        <div class="swiper-slide">
+            {% image carousel_item.image original as image_data %}
+            <img src="{{ image_data.url }}" alt="{{ image_data.alt }}" />
+            {% if carousel_item.caption or carousel_item.anchor_url %}
+                <div class="container">
+                    <div class="swiper-caption">
+                        <div class="title">
+                            <p class="h3">{{ carousel_item.caption }}</p>
+                        </div>
+                        {% if carousel_item.anchor_url %}
+                        <a href="{{ carousel_item.anchor_url }}" class="button">{{ carousel_item.anchor_text }}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+{% endif %}

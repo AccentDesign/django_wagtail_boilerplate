@@ -1,0 +1,58 @@
+[
+  {
+    "model": "wagtailcore.site",
+    "pk": 1,
+    "fields": {
+      "hostname": "localhost",
+      "port": 8000,
+      "site_name": "Example Site",
+      "root_page": 2,
+      "is_default_site": true
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 1,
+    "fields": {
+      "title": "Root",
+      "path": "0001",
+      "depth": 1,
+      "numchild": 1,
+      "slug": "root",
+      "content_type": [
+        "wagtailcore",
+        "page"
+      ],
+      "live": true,
+      "url_path": "/",
+      "show_in_menus": false,
+      "owner": 1
+    }
+  },
+  {
+    "model": "general.basicpage",
+    "pk": 2,
+    "fields": {
+      "template_string": "general/basic.html"
+    }
+  },
+  {
+    "model": "wagtailcore.page",
+    "pk": 2,
+    "fields": {
+      "title": "Home",
+      "path": "00010001",
+      "depth": 2,
+      "numchild": 0,
+      "slug": "home",
+      "content_type": [
+        "general",
+        "basicpage"
+      ],
+      "live": true,
+      "url_path": "/home/",
+      "show_in_menus": false,
+      "owner": 1
+    }
+  }
+]

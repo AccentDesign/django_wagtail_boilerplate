@@ -1,0 +1,21 @@
+// card
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+
+    .card-img {
+        min-height: 1px;
+        max-width: 100%;
+        height: auto;
+    }
+    .card-content {
+        padding: 2rem;
+        flex: 1 1 auto; // make this fill the remaining height
+    }
+    .card-content .button {
+        margin-top: 1rem;
+    }
+}

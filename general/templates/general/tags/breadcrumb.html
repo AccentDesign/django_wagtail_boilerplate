@@ -1,0 +1,13 @@
+{% load wagtailcore_tags %}
+
+<ol class="breadcrumb">
+{% for ancestor in ancestors %}
+    {% if forloop.last or not showlinks or ancestor.specific.is_placeholder %}
+        <li>{{ ancestor }}</li>
+    {% else %}
+        <li>
+            <a href="{% pageurl ancestor %}">{{ ancestor }}</a>
+        </li>
+    {% endif %}
+{% endfor %}
+</ol>

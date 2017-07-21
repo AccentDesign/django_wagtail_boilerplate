@@ -1,0 +1,12 @@
+boto3
+django
+django-ipware
+django-storages
+markdown
+pygments
+uwsgi
+wagtail
+wagtailstreamforms
+
+# postgres client
+psycopg2-binary

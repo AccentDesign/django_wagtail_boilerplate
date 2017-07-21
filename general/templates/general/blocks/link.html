@@ -1,0 +1,15 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% if value.external_link %}
+    <a href="{{ value.external_link }}" class="{{ value.button_style }}">
+        {% firstof value.text value.external_link %}
+    </a>
+{% elif value.page %}
+    <a href="{{ value.page.url }}" class="{{ value.button_style }}">
+        {% firstof value.text value.page.seo_title value.page.title %}
+    </a>
+{% elif value.document %}
+    <a href="{{ value.document.url }}" class="{{ value.button_style }}">
+        {% firstof value.text value.document %}
+    </a>
+{% endif %}

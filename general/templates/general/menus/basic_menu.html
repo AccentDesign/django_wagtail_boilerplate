@@ -1,0 +1,6 @@
+<ul>
+    {% if menu.heading %}<li>{{ menu.heading }}</li>{% endif %}
+    {% for item in menu.menu_items.all %}
+    <li class="{{ item.css_class }}"><a href="{{ item.url }}">{{ item.anchor_text }}</a></li>
+    {% endfor %}
+</ul>

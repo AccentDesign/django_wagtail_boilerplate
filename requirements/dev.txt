@@ -1,0 +1,7 @@
+# base requirements
+-r base.txt
+
+# test requirements
+coveralls
+django-debug-toolbar
+flake8

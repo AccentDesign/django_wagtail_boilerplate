@@ -1,0 +1,27 @@
+// Spacing
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$spacers: (		
+    '0':    0,		
+    'h':    .5rem,		
+    '1':    1rem,		
+    '1h':   1.5rem,		
+    '2':    2rem,		
+    '2h':   2.5rem,		
+    '3':    3rem,
+    '4':    4rem,
+    '5':    5rem,
+    '8':    8rem,
+    '10':   10rem
+) !default;
+
+@each $infix, $size in $spacers {		
+    @each $axis in ('', 'x', 'y', 't', 'r', 'b', 'l') {	
+        .p#{$axis}-#{$infix} { 		
+            @include padding($axis, $size !important); 		
+        }		
+        .m#{$axis}-#{$infix} { 		
+            @include margin($axis, $size !important); 		
+        }		
+    }		
+}

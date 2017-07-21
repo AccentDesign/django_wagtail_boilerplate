@@ -1,0 +1,59 @@
+// Section
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.section {
+    overflow: auto;
+}
+
+// certain elements carry a margin bottom like p and ul
+// make sure the last element has no margin bottom
+.section-inner > div > *:last-child {
+    margin-bottom: 0;
+}
+
+// dont set padding on mobile as not enough room
+@include media-breakpoint-up(lg) {
+    .padding-x-none {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .padding-x-sm {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .padding-x-md {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    .padding-x-lg {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+    .padding-x-xl {
+        padding-left: 8rem;
+        padding-right: 8rem;
+    }
+}
+
+.padding-y-none {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.padding-y-sm {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+.padding-y-md {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.padding-y-lg {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.padding-y-xl {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}

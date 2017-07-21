@@ -1,0 +1,12 @@
+// code highlight
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.codehilite pre {
+    padding: 1rem 1.5rem;
+    font-size: 90%;
+    white-space: pre;
+    background: $code-background;
+    border: 1px solid $border-color;
+    border-radius: $global-radius;
+    overflow-x:auto;
+}

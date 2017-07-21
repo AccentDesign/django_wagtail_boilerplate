@@ -1,0 +1,57 @@
+// Header
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.main {
+    padding-top: 120px; // in this file as should match header height
+}
+
+header {
+    height: 120px;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: zindex('header');
+    background-color: color("white");
+    transition: height 0.3s;
+    opacity: .95;
+
+    .logo {
+        @include centerer(false, true);
+        display: inline-block;
+        transition: all 0.3s;
+        margin-bottom: 0;
+        font-size: 40px;
+    }
+
+    .search-form {
+        @include centerer(false, true);
+        margin-bottom: 0;
+    }
+}
+
+header.smaller {
+    height: 60px;
+
+    .logo {
+        width: 150px;
+        font-size: 30px;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+
+    .main {
+        padding-top: 90px;
+    }
+
+    header {
+        height: 90px;
+
+        .search-form {
+            display: none;
+        }
+    }
+
+}

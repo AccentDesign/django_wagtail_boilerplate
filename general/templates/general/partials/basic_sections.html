@@ -1,0 +1,9 @@
+{% for section in page.sections.all %}
+<section class="section {% if section.background_width.css_class == 'full' %}{{ section.background.css_class }}{% endif %}">
+    <div class="section-inner {{ section.content_width.css_class }} {{ section.text_alignment.css_class }} {{ section.text_colour.css_class }} {% if section.background_width.css_class == 'content' %}{{ section.background.css_class }}{% endif %}">
+        <div class="{{ section.vertical_padding.css_class }} {{ section.horizontal_padding.css_class }}">
+            {% include 'general/partials/stream_field.html' with blocks=section.content %}
+        </div>
+    </div>
+</section>
+{% endfor %}

@@ -1,0 +1,17 @@
+// Variables
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+// typog
+$header-font-color:             inherit;
+
+// forms
+$input-use-full-width:          true;
+
+
+// defined z-indexes
+// and get with zindex('default')
+$z-layers: (
+        'header':               2,
+        'default':              1
+) !default;

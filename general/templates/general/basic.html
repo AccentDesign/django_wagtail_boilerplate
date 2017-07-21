@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load general_tags static %}
+
+{% block page_title %}{% firstof page.seo_title page.title %}{% endblock %}
+
+{% block inner_content %}
+
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				{% breadcrumb %}
+			</div>
+		</div>
+	</div>
+
+	{% include 'general/partials/carousel.html' with carousel_items=page.carousel_items.all only %}
+
+	{% include 'general/partials/basic_sections.html' %}
+
+{% endblock %}
+
+{% block extra_js %}{% endblock %}

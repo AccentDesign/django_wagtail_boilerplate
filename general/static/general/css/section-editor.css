@@ -1,0 +1,108 @@
+/*
+ * Override InlinePanel css for full width layout
+ */
+ 
+.full-width-multiple .field-col.col4 {
+    padding-left:0;
+}
+
+.full-width-multiple {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.full-width-multiple h2 {
+    margin: 0;
+}
+
+.full-width-multiple label {
+    display: block;
+    float: none;
+    margin-bottom: .5em;
+}
+
+.full-width-multiple .field-col.col4 .field-content, .full-width-multiple .field-col.col4 label {
+    display: block;
+    float: none;
+    width: 90%;
+}
+
+.full-width-multiple .richtext {
+    padding-top: 65px !important;
+}
+
+.full-width-multiple > .add {
+    margin-left: 50px;
+}
+
+.full-width-multiple.empty > .add  {
+    margin: 0;
+}
+
+.full-width-multiple .multiple {
+    max-width: 100%;
+    width: 100%;
+    padding: 3.3em 0 0;
+}
+
+.full-width-multiple .multiple > .controls {
+    right: 20px;
+}
+
+.full-width-multiple .multiple > li {
+    padding: 50px 20px 20px 50px;
+    border-bottom-color: #8e8e8e;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom-width: 30px;
+    margin-bottom: 0;
+}
+
+.full-width-multiple .multiple > li:nth-child(even) {
+    background: #eee;
+}
+
+.full-width-multiple .multiple > li:last-child {
+    margin-bottom: 1em;
+}
+
+.full-width-multiple .multiple > li > fieldset {
+    max-width: 100%;
+    width: 100%;
+}
+
+.full-width-multiple li.sequence-member .struct-block .sequence-container {
+    width: 100%;
+    float: none;
+}
+
+.full-width-multiple li.sequence-member .sequence-member-inner .sequence-type-list .sequence-container-inner {
+    width: 100%;
+    float: none;
+}
+
+.full-width-multiple p.help {
+    font-size: 1em;
+}
+
+/* streamfield inside full width multiple */
+
+.full-width-multiple-stream-field .sequence-controls {
+    right: 1em;
+}
+
+.full-width-multiple-stream-field .sequence-controls h3 label {
+    padding-top: 7px;
+}
+
+.full-width-multiple-stream-field .field-content {
+    float: none;
+    max-width: 100%;
+    width: 100%;
+}
+
+.full-width-multiple-stream-field .field-content > div > .sequence-container {
+    margin-left: -50px;
+    margin-right: -20px;
+}

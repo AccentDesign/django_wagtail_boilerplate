@@ -1,0 +1,18 @@
+{% load general_tags wagtailcore_tags wagtailimages_tags %}
+
+<div class="row">
+{% for card in value.cards %}
+    <div class="card {% gridcolumncss 'card' value.cards|length %}">
+        {% image card.image max-1000x1000 as img %}
+        {% if card.image_placement == 'top' %}
+        <img src="{{ img.url }}" alt="{{ img.alt }}" class="card-img">
+        {% endif %}
+        <div class="card-content {{ card.content_background.css_class }} {{ card.content_alignment.css_class }} {{ card.text_colour.css_class }}">
+            {% include 'general/partials/stream_field.html' with blocks=card.content %}
+        </div>
+        {% if card.image_placement == 'bottom' %}
+        <img src="{{ img.url }}" alt="{{ img.alt }}" class="card-img">
+        {% endif %}
+    </div>
+{% endfor %}
+</div>

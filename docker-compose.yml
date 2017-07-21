@@ -1,0 +1,50 @@
+version: '2'
+
+services:
+  app:
+    build:
+      context: .
+      args:
+      - REQUIREMENTS_FILE=/build/requirements/dev.txt
+    environment:
+    - DJANGO_MANAGEPY_COLLECTSTATIC=off
+    - DEV_MODE=on
+    - DJANGO_SETTINGS_MODULE=app.settings
+    - ALLOWED_HOSTS=*
+    - EMAIL_HOST=mail
+    - EMAIL_PORT=1025
+    - RDS_HOSTNAME=db
+    - RDS_PORT=5432
+    - RDS_DB_NAME=postgres
+    - RDS_USERNAME=postgres
+    - RDS_PASSWORD=password
+    - RDS_ADMIN_HOSTNAME=admin-db
+    - RDS_ADMIN_PORT=5432
+    - RDS_ADMIN_DB_NAME=postgres
+    - RDS_ADMIN_USERNAME=postgres
+    - RDS_ADMIN_PASSWORD=password
+    volumes:
+    - .:/code
+    depends_on:
+    - db
+    - mail
+    ports:
+    - "8000:8000"
+    command: ['python', './manage.py', 'runserver', '0.0.0.0:8000']
+
+  mail:
+    image: mailhog/mailhog
+    expose:
+    - "1025"
+    ports:
+    - "8025:8025"
+
+  db:
+    image: postgres
+    environment:
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=password
+    - POSTGRES_DB=postgres
+    - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+    - ./.postgres:/var/lib/postgresql/data/pgdata

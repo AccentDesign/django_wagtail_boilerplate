@@ -1,0 +1,10 @@
+node_modules
+.DS_Store
+.idea
+.postgres
+db.sqlite3
+**__pycache__**
+*.pyc
+.coverage
+htmlcov
+app/local_settings.py
