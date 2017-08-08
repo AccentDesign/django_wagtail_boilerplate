@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'app',
     'authentication',
     'general',
+    'logs'
 ]
 
 MIDDLEWARE_CLASSES = [

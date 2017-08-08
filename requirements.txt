@@ -1,5 +1,6 @@
 boto3
 django
+django-ipware
 django-storages
 markdown
 pygments
