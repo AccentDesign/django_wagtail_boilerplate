@@ -47,3 +47,5 @@ WAGTAILSEARCH_BACKENDS = {
         'SEARCH_CONFIG': 'english',
     },
 }
+
+WAGTAIL_USAGE_COUNT_ENABLED = True
