@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% load general_tags wagtailcore_tags wagtailsearchpromotions_tags %}
+
+{% block page_title %}Search Results{% endblock %}
+
+{% block inner_content %}
+<div class="container my-5">
+
+    {% if not query_string %}
+        <p>You did not search anything</p>
+    {% else %}
+
+        {% get_search_promotions query_string as search_promotions %}
+
+        {% if not search_promotions and not search_results %}
+            <p>No results found</p>
+        {% else %}
+            <ul class="list-style-none">
+
+                {% for result in search_promotions %}
+                    <li class="mb-3">
+                        <h3 class="mb-0"><a href="{% pageurl result.page %}">{{ result.page.title }}</a></h3>
+                        <div class="small muted">{% breadcrumb result.page False %}</div>
+                        <p class="mt-1">{{ result.description|safe }}</p>
+                    </li>
+                {% endfor %}
+
+                {% for result in search_results %}
+                    <li class="mb-3">
+                        <h3 class="mb-0"><a href="{% pageurl result.specific %}">{{ result.specific }}</a></h3>
+                        <div class="small muted">{% breadcrumb result.specific False %}</div>
+                        <p class="mt-1">
+                            {% if result.specific.search_description %}
+                                {{ result.specific.search_description|safe }}
+                            {% else %}
+                                No description available
+                            {% endif %}
+                        </p>
+                    </li>
+                {% endfor %}
+
+            </ul>
+        {% endif %}
+    {% endif %}
+
+</div>
+{% endblock %}

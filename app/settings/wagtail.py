@@ -48,4 +48,6 @@ WAGTAILSEARCH_BACKENDS = {
     },
 }
 
+WAGTAILSEARCH_RESULTS_TEMPLATE = 'general/search_results.html'
+
 WAGTAIL_USAGE_COUNT_ENABLED = True
