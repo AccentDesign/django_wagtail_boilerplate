@@ -17,6 +17,10 @@ class ServeLog(models.Model):
         'content_type',
         'object_id'
     )
+    url = models.CharField(
+        max_length=255,
+        null=True,
+    )
     remote_ip_address = models.CharField(
         max_length=255,
         null=True,
@@ -27,8 +31,7 @@ class ServeLog(models.Model):
         on_delete=models.SET_NULL,
         related_name='+'
     )
-    http_user_agent = models.CharField(
-        max_length=255,
+    http_user_agent = models.TextField(
         null=True,
     )
     request_method = models.CharField(

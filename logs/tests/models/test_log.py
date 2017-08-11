@@ -23,6 +23,10 @@ class TestModel(AppTestCase):
         self.assertEqual(field.ct_field, 'content_type')
         self.assertEqual(field.fk_field, 'object_id')
 
+    def test_url(self):
+        field = ServeLog._meta.get_field('url')
+        self.assertModelField(field, models.CharField, True, False)
+
     def test_remote_ip_address(self):
         field = ServeLog._meta.get_field('remote_ip_address')
         self.assertModelField(field, models.CharField, True, False)
@@ -33,7 +37,7 @@ class TestModel(AppTestCase):
 
     def test_http_user_agent(self):
         field = ServeLog._meta.get_field('http_user_agent')
-        self.assertModelField(field, models.CharField, True, False)
+        self.assertModelField(field, models.TextField, True, False)
 
     def test_request_method(self):
         field = ServeLog._meta.get_field('request_method')

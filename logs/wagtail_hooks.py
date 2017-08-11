@@ -17,6 +17,7 @@ class CreateServeLog(threading.Thread):
         return {
             'content_object': self.object,
             'object_id': self.object.pk,
+            'url': self.request.path,
             'remote_ip_address': get_real_ip(self.request),
             'user': self.request.user if self.request.user.is_authenticated else None,
             'http_user_agent': self.request.META.get('HTTP_USER_AGENT'),

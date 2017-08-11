@@ -21,6 +21,7 @@ class ServeLogAdmin(admin.ModelAdmin):
         'content_type',
         'object_id',
         'user',
+        'url',
         'remote_ip_address',
         'request_method',
         'query_string',
