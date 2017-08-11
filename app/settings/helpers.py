@@ -15,6 +15,12 @@ def dev_mode():
     return os.environ.get('DEV_MODE') is not None
 
 
+def in_test_mode():
+    if sys.argv[1:2] == ['test']:
+        return True
+    return False
+
+
 def show_toolbar(request):
     """
     Force debug toolbar due to issue inside docker from external to container.
@@ -25,7 +31,7 @@ def show_toolbar(request):
     :param request:
     :return bool:
     """
-    if sys.argv[1:2] == ['test']:
+    if in_test_mode():
         return False
     return False
     # return True

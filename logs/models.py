@@ -1,14 +1,22 @@
 from django.contrib.auth import get_user_model
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
 from django.db import models
 
-from wagtail.wagtaildocs.models import get_document_model
 
-
-DocumentModel = get_document_model()
 UserModel = get_user_model()
 
 
-class LogAbstract(models.Model):
+class ServeLog(models.Model):
+    content_type = models.ForeignKey(
+        ContentType,
+        on_delete=models.CASCADE
+    )
+    object_id = models.PositiveIntegerField()
+    content_object = GenericForeignKey(
+        'content_type',
+        'object_id'
+    )
     remote_ip_address = models.CharField(
         max_length=255,
         null=True,
@@ -36,23 +44,4 @@ class LogAbstract(models.Model):
     )
 
     class Meta:
-        abstract = True
         ordering = ['-date_accessed', ]
-
-
-class DocumentServe(LogAbstract):
-    document = models.ForeignKey(
-        DocumentModel,
-        null=True,
-        on_delete=models.SET_NULL,
-        related_name='+'
-    )
-
-
-class PageServe(LogAbstract):
-    page = models.ForeignKey(
-        'wagtailcore.Page',
-        null=True,
-        on_delete=models.SET_NULL,
-        related_name='+'
-    )
