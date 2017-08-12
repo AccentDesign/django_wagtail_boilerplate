@@ -29,5 +29,8 @@ class ServeLogAdmin(admin.ModelAdmin):
         'date_accessed'
     ]
 
+    def has_add_permission(self, request):
+        return False
+
 
 admin.site.register(ServeLog, ServeLogAdmin)
