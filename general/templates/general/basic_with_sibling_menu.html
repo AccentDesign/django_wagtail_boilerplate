@@ -15,7 +15,7 @@
 
     {% include 'general/partials/carousel.html' with carousel_items=page.carousel_items.all only %}
 
-	<div class="container my-5">
+	<div class="container">
         <div class="row">
             <div class="col-md-2">
                 {% children_menu parent_page=page.get_parent apply_active_classes=True template='general/menus/aside_menu.html' %}

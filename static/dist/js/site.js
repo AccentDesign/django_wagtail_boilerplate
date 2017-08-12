@@ -1,5 +1,20 @@
 $(document).ready(function () {
 
+    // shrinking header on scroll
+    $(document).on('scroll', function() {
+        var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+            shrinkOn = 300,
+            header = $("header");
+        if (distanceY > shrinkOn) {
+            header.addClass('smaller');
+        } else {
+            if (header.hasClass('smaller')) {
+                header.removeClass('smaller');
+            }
+        }
+    });
+
+    // owl carousel
     var owlLength = $('.owl-carousel').children().length;
 
     $('.owl-carousel').owlCarousel({

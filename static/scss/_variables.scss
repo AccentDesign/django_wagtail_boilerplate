@@ -5,3 +5,10 @@
 * start with a copy of the current varables file:
 * https://github.com/AccentDesign/karma-css/blob/master/scss/_variables.scss
 */
+
+// defined z-indexes
+// and get with zindex('default')
+$z-layers: (
+        'header':               2,
+        'default':              1
+) !default;

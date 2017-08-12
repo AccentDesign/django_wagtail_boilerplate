@@ -17,7 +17,9 @@
     {% block outer_body %}
 
         {% include 'includes/header.html' %}
-        {% block inner_content %}{% endblock %}
+        <div class="main">
+            {% block inner_content %}{% endblock %}
+        </div>
         {% include 'includes/footer.html' %}
 
     {% endblock %}

@@ -1267,16 +1267,14 @@ ul{
   margin-top:0;
   list-style:circle inside; }
   ul ul, ul ol{
-    margin:0 0 0 2rem;
-    font-size:90%; }
+    margin:0 0 0 2rem; }
 
 ol{
   padding-left:0;
   margin-top:0;
   list-style:decimal inside; }
   ol ol, ol ul{
-    margin:0 0 0 2rem;
-    font-size:90%; }
+    margin:0 0 0 2rem; }
 
 pre,
 dl,
@@ -1428,6 +1426,53 @@ blockquote{
   left:0;
   width:100%;
   height:100%; }
+
+header{
+  width:100%;
+  height:150px;
+  overflow:hidden;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:2;
+  background-color:white;
+  -webkit-transition:height 0.3s;
+  -o-transition:height 0.3s;
+  transition:height 0.3s;
+  opacity:.95; }
+
+header h1.logo{
+  display:inline-block;
+  -webkit-transition:all 0.3s;
+  -o-transition:all 0.3s;
+  transition:all 0.3s;
+  font-size:40px; }
+
+header h1.logo,header form.search-form{
+  position:relative;
+  top:50%;
+  -webkit-transform:translateY(-50%);
+  -o-transform:translateY(-50%);
+  transform:translateY(-50%);
+  margin-bottom:0; }
+
+header.smaller{
+  height:75px; }
+
+header.smaller h1.logo{
+  width:150px;
+  font-size:30px; }
+
+.main{
+  padding-top:150px; }
+
+@media (max-width: 767px){
+  header{
+    height:100px; }
+  header.smaller{
+    height:60px; }
+  .main{
+    padding-top:100px; } }
 
 @font-face{
   font-family:'fontello';
