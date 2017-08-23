@@ -1,6 +1,3 @@
-# base requirements
--r requirements.txt
-
 # test requirements
 coveralls
 django-debug-toolbar

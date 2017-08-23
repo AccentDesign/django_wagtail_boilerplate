@@ -4,6 +4,7 @@ django-ipware
 django-storages
 markdown
 pygments
+uwsgi
 wagtail
 wagtailmenus
 

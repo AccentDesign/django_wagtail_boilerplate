@@ -12,7 +12,7 @@ def dev_mode():
 
     :return bool:
     """
-    return os.environ.get('DEV_MODE') is not None
+    return os.environ.get('DEV_MODE') == 'on'
 
 
 def in_test_mode():

@@ -1,16 +1,14 @@
 version: '2'
 
-# run the app in development mode
+# run the app locally as if it were in production mode
 
 services:
   app:
     build: .
     tty: true
     volumes:
-    - .:/code
+    - static-volume:/code/public/static
     environment:
-    - DJANGO_MANAGEPY_COLLECTSTATIC=off
-    - DEV_MODE=on
     - RDS_HOSTNAME=db
     - RDS_PORT=5432
     - RDS_DB_NAME=postgres
@@ -21,9 +19,6 @@ services:
     depends_on:
     - db
     - mail
-    ports:
-    - 8000:8000
-    command: ['python', './manage.py', 'runserver', '0.0.0.0:8000']
   db:
     image: postgres
     environment:
@@ -37,3 +32,15 @@ services:
     image: mailhog/mailhog
     ports:
     - 8025:8025
+  nginx:
+    image: accent/rancher-django-proxy:latest
+    tty: true
+    volumes:
+    - static-volume:/www/static
+    depends_on:
+    - app
+    ports:
+    - 8000:80
+
+volumes:
+  static-volume:
