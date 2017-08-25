@@ -36,4 +36,25 @@ $(document).ready(function () {
             }
         }
     });
+
+    // Cookie Policy (cookieconsent.insites.com)
+    window.cookieconsent.initialise({
+        "palette": {
+        "popup": {
+            "background": "#252e39"
+        },
+        "button": {
+            "background": "#14a7d0"
+        }
+        },
+        "position": "bottom",
+        "content": {
+            "message": "This website uses cookies to ensure you get the best experience on our website.",
+            "dismiss": "Got it!",
+            "link": "Learn More",
+            "href": "http://link-to-your-policy-page.com/"
+        }
+    });
+
 });
+
