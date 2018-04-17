@@ -9,7 +9,7 @@ test:
   pre:
     - rm -rf .postgres
     - docker-compose pull
-    - docker-compose up -d
+    - docker-compose up -d && sleep 30
   override:
     - docker-compose run app make test
   post:
